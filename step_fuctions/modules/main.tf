@@ -38,7 +38,7 @@ resource "aws_sfn_state_machine" "sfn_state_machine" {
           Next       = "Success"
           OutputPath = "$.Payload"
           Parameters = {
-            FunctionName = "arn:aws:lambda:ap-northeast-1:504784160859:function:stripe-webhook:$LATEST"
+            FunctionName = "arn:aws:lambda:ap-northeast-1:${var.aws_account_id}:function:stripe-webhook:$LATEST"
             "Payload.$"  = "$"
           }
           Resource = "arn:aws:states:::lambda:invoke"
@@ -64,7 +64,7 @@ resource "aws_sfn_state_machine" "sfn_state_machine" {
     }
   )
   name     = "MyStateMachine"
-  role_arn = "arn:aws:iam::504784160859:role/service-role/StepFunctions-MyStateMachine-role-0d0ed0c8"
+  role_arn = "arn:aws:iam::${var.aws_account_id}:role/service-role/StepFunctions-MyStateMachine-role-0d0ed0c8"
   tags     = {}
   tags_all = {}
   type     = "STANDARD"
