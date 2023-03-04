@@ -36,3 +36,8 @@ module "ecs_task" {
   ecs_task_definition_name = "example"
   aws_account_id           = local.aws_account_id
 }
+
+module "lambda" {
+  source               = "./modules/lambda"
+  lambda_function_name = "example"
+}
