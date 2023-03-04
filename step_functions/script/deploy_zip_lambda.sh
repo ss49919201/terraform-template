@@ -2,6 +2,8 @@
 
 set -e
 
+export AWS_PROFILE=$1
+
 function changeDir() {
 	cd $(dirname $0)/../src/lambda
 }
@@ -17,7 +19,6 @@ function zipBinary() {
 function upload() {
 	aws lambda update-function-code \
 	--region ap-northeast-1 \
-	--profile developer \
 	--function-name example \
 	--zip-file fileb://main.zip
 }
