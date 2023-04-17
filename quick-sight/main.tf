@@ -10,5 +10,17 @@ terraform {
 }
 
 provider "aws" {
-  region = ap-northeast-1
+  region = "ap-northeast-1"
+}
+
+variable "email" {
+  type = string
+  nullable = false
+}
+
+resource "aws_quicksight_account_subscription" "subscription" {
+  account_name          = "example_enterprise"
+  authentication_method = "IAM_AND_QUICKSIGHT"
+  edition               = "ENTERPRISE"
+  notification_email    = var.email
 }
