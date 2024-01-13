@@ -1,0 +1,14 @@
+{
+  "fileLocations": [
+    {
+      "URIs": [
+        "s3://ss49919201/data.csv"
+      ]
+    }
+  ],
+  "globalUploadSettings": {
+    "format": "CSV",
+    "delimiter": ",",
+    "containsHeader": "true"
+  }
+}

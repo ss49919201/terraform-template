@@ -1,0 +1,6 @@
+{
+  "string": "value",
+  "number": 1,
+  "boolean": true,
+  "array": [1, 2, 3]
+}
